@@ -31,7 +31,7 @@
         //Computer chooses a letter from the alphabet which it will be the "guess what I'm thinking of"
 
         var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+        var userGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var wins = 0;
         var losses = 0;
         var guessesLeft = 9;
@@ -55,17 +55,17 @@
 
 
 
+            //this is where the choices, wins, loses and attempts left.
 
             if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c")) {
 
-                if userGuess===computerChoices){
+                if (userGuess===computerChoices){
                     wins++;
                 }
                 else if (userGuess!==computerChoices) {
                 guessesLeft--;
                 losses++;
                 }
-
                 else if (userGuess =0) {
                     wins=0;
                     losses=0;
@@ -74,8 +74,7 @@
 
                 }
 
-                  
-
+            
                 winsText.textContent = "Wins : " + wins;
                 lossesText.textContent = "Losses : " + losses;
                 tiesText.textContent = "Guesses left :"  + guessesLeft;
