@@ -1,5 +1,5 @@
 
-    // Array with the alphabet for the computer choice
+// Array with the alphabet for the computer choice
 
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -24,26 +24,26 @@ document.onkeyup = function (event) {
 
 
 
-    if ((userGuess=== computerChoices)) 
+    if ((userGuess === computerChoices))
 
 
-    if ((userGuess === "a") || (userGuess === "b") || (userGuess === "")) {
+        if ((userGuess === "a") || (userGuess === "b") || (userGuess === "")) {
 
-        if ((userGuess === "r" && computerGuess === "s") ||
-            (userGuess === "s" && computerGuess === "p") ||
-            (userGuess === "p" && computerGuess === "r")) {
-            wins++;
-        } else if (userGuess === computerGuess) {
-            ties++;
-        } else {
-            losses++;
-        }
-
-
+            if ((userGuess === "r" && computerGuess === "s") ||
+                (userGuess === "s" && computerGuess === "p") ||
+                (userGuess === "p" && computerGuess === "r")) {
+                wins++;
+            } else if (userGuess === computerGuess) {
+                ties++;
+            } else {
+                losses++;
+            }
 
 
-        winsText.textContent = "Wins : " + wins;
-        lossesText.textContent = "Losses : " + losses;
-        tiesText.textContent = "Guesses left :" + guessesLeft;
-        userChoiceText.textContent = "Your Guesses so far:  " + userGuess;
+
+
+            winsText.textContent = "Wins : " + wins;
+            lossesText.textContent = "Losses : " + losses;
+            tiesText.textContent = "Guesses left :" + guessesLeft;
+            userChoiceText.textContent = "Your Guesses so far:  " + userGuess;
 

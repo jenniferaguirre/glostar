@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel= "stylesheet" type= "text/css" href="assets/javascript/game.js">
+    <link rel="stylesheet" type="text/css" href="assets/javascript/game.js">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -18,11 +18,12 @@
 
     <div>
         <p id="directions-text">Guess what I'm thinking of
-            <p id="userchoice-text"></p>
-            <p id="computerchoice-text"></p>
+            <p id="userguess-text"></p>
+            <p id="computerguess-text"></p>
             <p id="wins-text"></p>
             <p id="losses-text"></p>
-            <p id="ties-text"></p>
+            <p id= "guessesleft-text"></p>
+           
     </div>
 
     <script type="text/javascript">
@@ -30,59 +31,60 @@
 
         //Computer chooses a letter from the alphabet which it will be the "guess what I'm thinking of"
 
-        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var computerGuess= ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var userGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var wins = 0;
         var losses = 0;
         var guessesLeft = 9;
 
-        
+
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
-        var userChoiceText = document.getElementById("userchoice-text");
-        var computerChoiceText = document.getElementById("computerchoice-text");
-        var guessesLeft= document.getElementById("guessleft-text");
-        
-    
+        var userGuessText = document.getElementById("userguess-text");
+        var computerGuessText = document.getElementById("computerguess-text");
+        var guessesLeft = document.getElementById("guessleft-text");
+
+
 
 
         document.onkeyup = function (event) {
 
             var userGuess = event.key;
-            var userGuessLower =userGuess.toLowerCase();
+            var userGuessLower = userGuess.toLowerCase();
+            
 
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            var computerGuess = computerGuess[Math.floor(Math.random() * computerGuess.length)];
 
 
 
             //this is where the choices, wins, loses and attempts left.
 
-            if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c")) {
+            // if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c")) {
 
-                if (userGuess===computerChoices){
-                    wins++;
-                }
-                else if (userGuess!==computerChoices) {
+            if (userGuess === computerGuess) {
+                wins++;
+            }
+            else if (userGuess !== computerGuess) {
                 guessesLeft--;
                 losses++;
-                }
-                else if (userGuess =0) {
-                    wins=0;
-                    losses=0;
-                    guessesLeft=0;
+            }
 
-
-                }
-
-            
-                winsText.textContent = "Wins : " + wins;
-                lossesText.textContent = "Losses : " + losses;
-                tiesText.textContent = "Guesses left :"  + guessesLeft;
-                userChoiceText.textContent = "Your Guesses so far:  " + userGuess;
-
+            else if (userGuess = 0) {
+                wins = 0;
+                losses = 0;
+                guessesLeft = 0;
 
 
             }
+
+            winsText.textContent = "Wins : " + wins;
+            lossesText.textContent = "Losses : " + losses;
+            guessesLeft.textContent = "Guesses left :" + guessesLeft;
+            userGuessText.textContent = "Your Guesses so far:  " + userGuess;
+
+
+
+
         };
     </script>
 
