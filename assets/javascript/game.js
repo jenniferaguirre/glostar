@@ -46,7 +46,7 @@ document.onkeyup = function (event) {
             if (playAgain === true) {
                 guessesLeft = 9;
                 guessedLetters = [];
-                computerGuess = computerGuess[math.floor(Math.random() * computerGuess.length)];
+                computerGuess = computerGuess[Math.floor(Math.random() * computerGuess.length)];
 
             }
 

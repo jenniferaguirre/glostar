@@ -4,34 +4,38 @@ h1 {
 }
 
 #directions-text{ 
-    font-size: 30px;
+    font-size: 35px;
     font-style: normal;
-
+    
 }
 
   #computerguess-text{
-
-
-  }
+      font-size: 25px;
+      }
 
   #wins-text{
-
-
+    font-size: 25px;
             
  }
+
  #losses-text{
-
-
+    font-size: 25px;
 
  }
     #guessesleft-text{
-
-
+     font-size: 25px;
 
     }
-#guessedletters-text{
+
+    #guessedletters-text{
+    font-size: 25px;
+}
 
 
 
-    
+body{
+background-image: url( "psy.jpg");
+background-size: cover;
+
+
 }
