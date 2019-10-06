@@ -1,1 +1,37 @@
-h1
+h1 {
+    font-size: 50px;
+
+}
+
+#directions-text{ 
+    font-size: 30px;
+    font-style: normal;
+
+}
+
+  #computerguess-text{
+
+
+  }
+
+  #wins-text{
+
+
+            
+ }
+ #losses-text{
+
+
+
+ }
+    #guessesleft-text{
+
+
+
+    }
+#guessedletters-text{
+
+
+
+    
+}
