@@ -3,11 +3,20 @@ h1 {
 
 }
 
+
+
+
 #directions-text{ 
     font-size: 35px;
     font-style: normal;
     
 }
+
+#tostart-text{
+  font-size: 25px;
+
+}
+
 
   #computerguess-text{
       font-size: 25px;
