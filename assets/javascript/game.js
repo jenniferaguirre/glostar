@@ -1,4 +1,4 @@
-var computerGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var computerGuesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // var userGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var wins = 0;
 var losses = 0;
@@ -12,23 +12,28 @@ var guessesLeftText = document.getElementById("guessesleft-text");
 var guessedLettersText = document.getElementById("guessedletters-text");
 
 
-var computerGuess = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+var computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.length)];
 
 document.onkeyup = function (event) {
 
     var userGuess = event.key;
     var userGuessLower = userGuess.toLowerCase();
-    guessedLetters.push(userGuess);
+    
 
 
 
-    if (computerGuess.indexOf(userGuess)) {
+    if (computerGuesses.indexOf(userGuess) > 0 ) {
+        guessedLetters.push(userGuess);
+        console.log(computerGuess);
 
+        console.log("run")
         if (userGuess === computerGuess) {
             wins++;
             guessesLeft = 9;
                 guessedLetters = [];
-                computerGuess = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+                winsText.textContent = "Wins : " + wins;
+                computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.length)];
+
         }
         else if (userGuess !== computerGuess) {
             guessesLeft--;
@@ -47,7 +52,7 @@ document.onkeyup = function (event) {
             if (playAgain === true) {
                 guessesLeft = 9;
                 guessedLetters = [];
-                computerGuess = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+                computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.length)];
 
             }
 
